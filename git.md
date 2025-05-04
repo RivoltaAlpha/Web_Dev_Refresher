@@ -117,13 +117,14 @@ Conflicts occur when changes on two branches clash.
 
 ## ✅ 7. Git Stash
 
-Temporarily save uncommitted changes:
+Git stash temporarily saves (or “stashes”) your uncommitted changes — both staged and unstaged — without committing them to the current branch. You can then apply or pop them back later.:
 
 ```bash
 git stash               # Stash changes
 git stash list          # View stashes
 git stash apply         # Reapply the last stash
 git stash drop          # Remove a stash
+git stash pop          # Apply the last stash and remove it from the stash list
 ```
 
 ---
@@ -159,7 +160,7 @@ squash ghi789 More fixes
 
 ## ✅ 10. Git Cherry-pick
 
-Apply a specific commit from one branch to another:
+Apply a specific commit from one branch to another while preserving the commit's changes:
 
 ```bash
 git cherry-pick <commit-hash>
@@ -182,4 +183,16 @@ git push -u origin main
 2. Create a Pull Request (PR) to `main`.
 3. Review, test, and merge.
    
+---
+
+## Summary table
+| Action        | Use Case                       | Command                  |
+| ------------- | ------------------------------ | ------------------------ |
+| `merge`       | Combine branches, keep history | `git merge branch`       |
+| `rebase`      | Clean history, linear commits  | `git rebase branch`      |
+| `squash`      | Combine multiple commits       | `git rebase -i HEAD~n`   |
+| `cherry-pick` | Apply specific commits only    | `git cherry-pick <hash>` |
+
+---
+
 ```
